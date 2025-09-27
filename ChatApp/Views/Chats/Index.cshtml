@@ -1,0 +1,141 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers@addTagHelper
+@using ChatApp
+@using ChatApp.Models
+@model List<ChatApp.Models.Chat>
+
+@{
+    ViewData["Title"] = "Chat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var lasMessages = Model?.LastOrDefault();
+    var userlist = ViewBag.UserList;
+}
+@section Styles{
+<style>
+    body { background-color: #CDC4F9; }
+    #chat3 { border-radius: 15px; }
+</style>
+}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <div class="card" id="chat3">
+                    <div class="card-body">
+                        <input type="hidden" id="UserID" value="@ViewBag.UserId" />
+                        @*  <input type="hidden" id="UserID" value="@ViewBag.ReceivedUserId" /> *@
+                        <div class="row">
+                            <!-- SOL LİSTE -->
+                            <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+                                <div class="p-3">
+                                    <div class="input-group rounded mb-3">
+                                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                        <span class="input-group-text border-0" id="search-addon">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </div>
+
+                                    <div data-mdb-perfect-scrollbar-init style="position: relative; height: 400px">
+                                        <ul class="list-unstyled mb-0">
+                                            @foreach(var usr in userlist)
+                                            {
+                                                bool isOnline = false;
+                                                if (usr.Status == "online")
+                                                {
+                                                    isOnline = true;
+                                                }
+                                                <li class="p-2 border-bottom @(isOnline ? "bg-light" : "")" >
+                                                    <a asp-action="getChat" asp-controller="Chats" asp-route-Id="@ViewBag.UserId" asp-route-receivedUserId="@usr.Id"  >
+                                                        <div class="pt-1">
+                                                            @*  <input type="type" name="name" value="" /> *@
+                                                            <input type="hidden" id="Receiver" value=@usr.Id />
+                                                            <p class="fw-bold mb-0">@usr.userName</p>
+                                                            @* <p class="small text-muted">@lasMessages.Messages</p> *@
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            }
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SAĞ MESAJLAR -->
+                            @{
+                                var me = (Guid?)(ViewBag.UserId) ?? Guid.Empty;   // giriş yapan kullanıcı
+                            }
+
+                            <div id="chatScroll" class="chat-scroll">
+                                <ul class="list-unstyled mb-0" id="chatList">
+                                    @if (Model != null && Model.Any())
+                                    {
+                                        foreach (var chat in Model)
+                                        {
+                                            var isMine = chat.UserId == me;
+
+                                            <li class="d-flex mb-3 @(isMine ? "justify-content-end" : "justify-content-start")">
+                                                @* Karşı tarafın avatarı solda, benimkisi sağda (opsiyonel) *@
+                                                @if (!isMine)
+                                                {
+                                                    <img src="/img/avatars/user.png" class="rounded-circle shadow-sm me-2 d-none d-sm-block" width="36" height="36" alt="user">
+                                                }
+
+                                                <div class="msg @(isMine ? "msg-out" : "msg-in")">
+                                                    <div class="small text-muted mb-1 d-flex @(isMine ? "justify-content-end" : "justify-content-start")">
+                                                        @chat.Date.ToString("dd.MM.yyyy HH:mm")
+                                                    </div>
+                                                    <div class="msg-text">@chat.Messages</div>
+                                                </div>
+
+                                                @if (isMine)
+                                                {
+                                                    <img src="/img/avatars/me.png" class="rounded-circle shadow-sm ms-2 d-none d-sm-block" width="36" height="36" alt="me">
+                                                }
+                                            </li>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <li class="text-muted small text-center py-4">Henüz mesaj yok. İlk mesajı sen gönder!</li>
+                                    }
+                                </ul>
+                            </div>
+                            
+                                <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
+                                         alt="avatar 3" style="width: 40px; height: 100%;">
+                                    <input type="text" class="form-control form-control-lg"
+                                           id="messageInput"  placeholder="Type message">
+                                    <a class="ms-1 text-muted" href="#"><i class="fas fa-paperclip"></i></a>
+                                    <a class="ms-3 text-muted" href="#"><i class="fas fa-smile"></i></a>
+                                    <a class="ms-3" id="sendButton" type="button" asp-action="SendMessage">@Html.AntiForgeryToken()<i class="fas fa-paper-plane"></i></a>
+                                </div>
+                            </div>
+                            <!-- /SAĞ -->
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    <script>
+        (function () {
+               const sc = document.getElementById('chatScroll');
+               if (sc) sc.scrollTop = sc.scrollHeight;
+           })();
+           </script>
+    <script src="~/js/JavaScript.js"></script>
+    <script>window.sendUrl='@Url.Action("SendMessage", "Chats")';</script>
+    <script src="~/microsoft-signalr/signalr.min.js"></script>
+   
+    <script src="~/js/chat.js"></script>
+}
+

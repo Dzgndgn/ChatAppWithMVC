@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|c:\\users\\bilcag\\desktop\\chatapp\\chatapp\\wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|solutionrelative:chatapp\\wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|c:\\users\\bilcag\\desktop\\chatapp\\chatapp\\views\\chats\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|solutionrelative:chatapp\\views\\chats\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|c:\\users\\bilcag\\desktop\\chatapp\\chatapp\\controllers\\chatscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|solutionrelative:chatapp\\controllers\\chatscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|c:\\users\\bilcag\\desktop\\chatapp\\chatapp\\wwwroot\\js\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|solutionrelative:chatapp\\wwwroot\\js\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|c:\\users\\bilcag\\desktop\\chatapp\\chatapp\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|solutionrelative:chatapp\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|c:\\users\\bilcag\\desktop\\chatapp\\chatapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|solutionrelative:chatapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|c:\\users\\bilcag\\desktop\\chatapp\\chatapp\\wwwroot\\bootstrap\\js\\bootstrap.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|solutionrelative:chatapp\\wwwroot\\bootstrap\\js\\bootstrap.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|c:\\users\\bilcag\\desktop\\chatapp\\chatapp\\wwwroot\\bootstrap\\css\\stylesheet.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B2F01FEC-B210-4F00-BE8D-C07E64BE070D}|ChatApp\\ChatApp.csproj|solutionrelative:chatapp\\wwwroot\\bootstrap\\css\\stylesheet.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "JavaScript.js",
+              "DocumentMoniker": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\wwwroot\\js\\JavaScript.js",
+              "RelativeDocumentMoniker": "ChatApp\\wwwroot\\js\\JavaScript.js",
+              "ToolTip": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\wwwroot\\js\\JavaScript.js",
+              "RelativeToolTip": "ChatApp\\wwwroot\\js\\JavaScript.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-25T20:54:52.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "bootstrap.js",
+              "DocumentMoniker": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\wwwroot\\bootstrap\\js\\bootstrap.js",
+              "RelativeDocumentMoniker": "ChatApp\\wwwroot\\bootstrap\\js\\bootstrap.js",
+              "ToolTip": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\wwwroot\\bootstrap\\js\\bootstrap.js",
+              "RelativeToolTip": "ChatApp\\wwwroot\\bootstrap\\js\\bootstrap.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-25T20:53:00.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ChatApp\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ChatApp\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T19:49:35.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StyleSheet.css",
+              "DocumentMoniker": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\wwwroot\\bootstrap\\css\\StyleSheet.css",
+              "RelativeDocumentMoniker": "ChatApp\\wwwroot\\bootstrap\\css\\StyleSheet.css",
+              "ToolTip": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\wwwroot\\bootstrap\\css\\StyleSheet.css",
+              "RelativeToolTip": "ChatApp\\wwwroot\\bootstrap\\css\\StyleSheet.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-25T19:48:54.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Chat.cs",
+              "DocumentMoniker": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\Models\\Chat.cs",
+              "RelativeDocumentMoniker": "ChatApp\\Models\\Chat.cs",
+              "ToolTip": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\Models\\Chat.cs",
+              "RelativeToolTip": "ChatApp\\Models\\Chat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T19:02:11.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\Views\\Chats\\Index.cshtml",
+              "RelativeDocumentMoniker": "ChatApp\\Views\\Chats\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\Views\\Chats\\Index.cshtml",
+              "RelativeToolTip": "ChatApp\\Views\\Chats\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T18:29:32.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChatsController.cs",
+              "DocumentMoniker": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\Controllers\\ChatsController.cs",
+              "RelativeDocumentMoniker": "ChatApp\\Controllers\\ChatsController.cs",
+              "ToolTip": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\Controllers\\ChatsController.cs",
+              "RelativeToolTip": "ChatApp\\Controllers\\ChatsController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowF8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T18:29:27.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "chat.js",
+              "DocumentMoniker": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\wwwroot\\js\\chat.js",
+              "RelativeDocumentMoniker": "ChatApp\\wwwroot\\js\\chat.js",
+              "ToolTip": "C:\\Users\\Bilcag\\Desktop\\ChatApp\\ChatApp\\wwwroot\\js\\chat.js",
+              "RelativeToolTip": "ChatApp\\wwwroot\\js\\chat.js",
+              "ViewState": "AgIAACEAAAAAAAAAAAAkwDQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-22T23:46:14.386Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
