@@ -1,15 +1,25 @@
 ﻿using ChatApp.Context;
 using ChatApp.Data;
 using ChatApp.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChatApp.Controllers
 {
     
-    public class AuthController(AppDbContext _context) : Controller
+    public class AuthController : Controller
     {
-       
+        private readonly AppDbContext _context;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
+        public AuthController(UserManager<User> userManager, SignInManager<User> signInManager, AppDbContext context)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _context = context;
+        }
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -24,22 +34,34 @@ namespace ChatApp.Controllers
             if (!ModelState.IsValid)
                 return View(dto);
 
-            bool isUserNameExist = await _context.users.AnyAsync(x => x.userName == dto.userName, cancellationToken);
-            if (isUserNameExist)
+            //bool isUserNameExist = await _context.users.AnyAsync(x => x.userName == dto.userName, cancellationToken);
+            //if (isUserNameExist)
+            //{
+            //    ModelState.AddModelError("", "This username has been used");
+            //    return View(dto);
+            //}
+            var isUserNameExist = await _userManager.FindByNameAsync(dto.userName);
+            if(isUserNameExist != null)
             {
-                ModelState.AddModelError("", "This username has been used");
-                return View(dto);
+                ModelState.AddModelError("", "This username hass ben used");
             }
+            var hasher = new PasswordHasher<User>();
 
-            var user = new User
-            {
-                userName = dto.userName,
-                password = dto.password 
-            };
+            //var user = new User
+            //{
+            //    //userName = dto.userName,
+            //    //password = dto.password 
+            //    UserName = dto.userName,
 
-            await _context.AddAsync(user, cancellationToken);
-            await _context.SaveChangesAsync(cancellationToken);
+            //    PasswordHash = hasher.HashPassword(user, dto.password)
+            //};
+            User user = new User();
+            user.UserName = dto.userName;
+            user.PasswordHash = hasher.HashPassword(user, dto.password);
 
+            // await _context.AddAsync(user, cancellationToken);
+            //await _context.SaveChangesAsync(cancellationToken);
+            await _userManager.CreateAsync(user);
             TempData["AuthMessage"] = "Kayıt başarılı. Giriş yapabilirsiniz.";
             return RedirectToAction(nameof(Login));
         }
@@ -62,18 +84,25 @@ namespace ChatApp.Controllers
                 return View();
             }
 
-            var user = await _context.users.FirstOrDefaultAsync(x => x.userName == userName && x.password == password, cancellationToken);
-            if (user is null)
+            //   var user = await _context.users.FirstOrDefaultAsync(x => x.userName == userName && x.password == password, cancellationToken);
+            var signIn = await _signInManager.PasswordSignInAsync(userName, password, isPersistent: false, lockoutOnFailure: false);
+            if (!signIn.Succeeded)
             {
                 ModelState.AddModelError("", "Kullanıcı bulunamadı.");
                 return View();
             }
 
+            //if (user is null)
+            //{
+            //    ModelState.AddModelError("", "Kullanıcı bulunamadı.");
+            //    return View();
+            //}
+            var user =await _userManager.FindByNameAsync(userName);
             user.Status = "online";
             await _context.SaveChangesAsync(cancellationToken);
 
             
-            TempData["AuthMessage"] = $"Hoş geldin, {user.userName}!";
+            TempData["AuthMessage"] = $"Hoş geldin, {user.UserName}!";
             return RedirectToAction("Index", "Chats", new
             {
                 Id = user.Id
@@ -81,33 +110,6 @@ namespace ChatApp.Controllers
         }
 
         
-        [HttpPost]
-        [Route("api/[controller]/[action]")]
-        public async Task<IActionResult> RegisterApi([FromBody] registerDto dto, CancellationToken cancellationToken)
-        {
-            bool isUserNameExist = await _context.users.AnyAsync(x => x.userName == dto.userName, cancellationToken);
-            if (isUserNameExist)
-                return BadRequest(new { Message = "This username has been used" });
-
-            var user = new User { userName = dto.userName, password = dto.password };
-            await _context.AddAsync(user, cancellationToken);
-            await _context.SaveChangesAsync(cancellationToken);
-
-            return NoContent();
-        }
-
         
-        [HttpGet]
-        [Route("api/[controller]/[action]")]
-        public async Task<IActionResult> LoginApi(string username, string password, CancellationToken cancellationToken)
-        {
-            var user = await _context.users.FirstOrDefaultAsync(x => x.userName == username && x.password == password, cancellationToken);
-            if (user is null)
-                return BadRequest(new { Message = "Kullanıcı bulunamadı." });
-
-            user.Status = "online";
-            await _context.SaveChangesAsync(cancellationToken);
-            return Ok(user);
-        }
     }
 }

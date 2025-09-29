@@ -1,6 +1,11 @@
 using ChatApp.Context;
 using ChatApp.Hubs;
+using ChatApp.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +18,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSignalR();
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer("Server = localhost; Database = ChatApp; Trusted_Connection = True; TrustServerCertificate = True;"));
+builder.Services
+    .AddIdentity<User, IdentityRole<Guid>>()          
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
